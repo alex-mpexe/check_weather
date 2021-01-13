@@ -1,9 +1,8 @@
 import Foundation
 import RealmSwift
 
-// Realm forecast model
+// MARK: - Realm forecast model
 class ForecastManagedModel: Object {
-    @objc dynamic var city: String? = nil
     @objc dynamic var date = String()
     @objc dynamic var temperature = String()
     @objc dynamic var pressure = String()
@@ -28,8 +27,8 @@ class ForecastManagedModel: Object {
     }
 }
 
+// MARK: - Plain forecast model
 class ForecastPlainModel {
-    var city: String?
     var date = String()
     var temperature = String()
     var pressure = String()
@@ -50,7 +49,7 @@ class ForecastPlainModel {
     }
 }
 
-// Model for "weather" key in openweathermap API
+// MARK: - Model for "weather" key in openweathermap API
 class Weather: Decodable {
     var description: String?
     var icon: String?
@@ -60,7 +59,7 @@ class Weather: Decodable {
     }
 }
 
-// Model for temp data
+// MARK: - Model for "temp" key in openweathermap API
 class Temperature: Decodable {
     var day: Double?
     enum CodingKeys: String, CodingKey {
@@ -68,7 +67,7 @@ class Temperature: Decodable {
     }
 }
 
-// Model for daily data
+// MARK: - Model for "daily" key in openweathermap API
 class Daily: Decodable {
     var date: Double?
     var pressure: Double?
@@ -85,7 +84,7 @@ class Daily: Decodable {
     
 }
 
-// Model for weekly forecast
+// MARK: - Model for all "daily" keys in openweathermap API
 class WeeklyForecastData: Decodable {
     var daily: [Daily]?
     enum CodingKeys: String, CodingKey {
@@ -99,7 +98,7 @@ class WeeklyForecastData: Decodable {
             let plainModel = ForecastPlainModel()
             plainModel.date = Date(timeIntervalSince1970: day.date ?? 0).formateDate(with: "dd MMMM yyyy г.")
             plainModel.humidity = "\(day.humidity ?? 0) %"
-            plainModel.pressure =  "\((day.pressure ?? 0) / 133) мм. рт. ст."
+            plainModel.pressure =  "\(((day.pressure ?? 0) / 133).rounded()) мм. рт. ст."
             plainModel.temperature = "\(Int((day.temp.day ?? 0).rounded())) \u{2103}"
             plainModel.weatherDescription = day.weather?.first?.description ?? ""
             if let url = URL(string: "http://openweathermap.org/img/wn/\(day.weather?.first?.icon ?? "")@4x.png") {

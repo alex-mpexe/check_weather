@@ -1,7 +1,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import MapKit
 
 class MainViewController: UIViewController {
     
@@ -12,7 +11,7 @@ class MainViewController: UIViewController {
     // MARK: - Base variables
     private let bag = DisposeBag()
     private let viewModel = MainViewModel()
-    let activityIndicator = UIActivityIndicatorView(style: .large)
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -22,12 +21,8 @@ class MainViewController: UIViewController {
         bind()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-    }
-    
-    func setupActivityIndicator() {
+    // MARK: - Setup Activity Indicator for loader
+    private func setupActivityIndicator() {
         view.addSubview(activityIndicator)
         activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5)
         activityIndicator.startAnimating()
@@ -36,27 +31,43 @@ class MainViewController: UIViewController {
     // MARK: - UI Binding
     private func bind() {
         
+        // Handle selected table item
+        tableView.rx.modelSelected(ForecastPlainModel.self)
+            .subscribe(onNext: {[unowned self] model in
+                let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
+                detailVC.selectedDay = model
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            })
+            .disposed(by: bag)
         
+        // Deselect row
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [unowned self] indexPath in
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: bag)
+        
+        // Binding for activity indicator
         viewModel.loadingStatus
             .bind(to: activityIndicator.rx.isHidden)
             .disposed(by: bag)
         
+        // Binding for tableView data
         viewModel.getForecastData()
-            .observe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: ForecastCell.self)) { (row, item, cell) in
                 cell.tempLabel.text = item.temperature
                 cell.weatherIcon.image = UIImage(data: item.weatherIconData)
                 cell.dateLabel.text = item.date
             }
             .disposed(by: bag)
-        
-        
     }
     
 }
 
+// MARK: - Extension for TableView Delegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70.0
+        return 100.0
     }
+    
 }

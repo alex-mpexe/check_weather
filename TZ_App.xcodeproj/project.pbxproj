@@ -19,8 +19,9 @@
 		8A1B7EED25AEF0FA00398986 /* NetworkLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EEC25AEF0FA00398986 /* NetworkLoader.swift */; };
 		8A1B7EF025AEF62700398986 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EEF25AEF62700398986 /* CacheManager.swift */; };
 		8A1B7EF425AEFEEE00398986 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EF325AEFEEE00398986 /* Extension + Date.swift */; };
-		8A1B7EF725AEFF0500398986 /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EF625AEFF0500398986 /* Extension + UIImage.swift */; };
 		8A1B7EFA25AF11C800398986 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EF925AF11C800398986 /* ForecastCell.swift */; };
+		8A1B7EFD25AF6B3E00398986 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EFC25AF6B3D00398986 /* DetailViewModel.swift */; };
+		8A1B7F0025AF6B6C00398986 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EFF25AF6B6C00398986 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +40,9 @@
 		8A1B7EEC25AEF0FA00398986 /* NetworkLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoader.swift; sourceTree = "<group>"; };
 		8A1B7EEF25AEF62700398986 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		8A1B7EF325AEFEEE00398986 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
-		8A1B7EF625AEFF0500398986 /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
 		8A1B7EF925AF11C800398986 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		8A1B7EFC25AF6B3D00398986 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8A1B7EFF25AF6B6C00398986 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9C10B8952F2FEB28C9722945 /* Pods-TZ_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TZ_App.debug.xcconfig"; path = "Target Support Files/Pods-TZ_App/Pods-TZ_App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8A1B7EE625AE37D300398986 /* MainViewController.swift */,
+				8A1B7EFF25AF6B6C00398986 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				8A1B7EE925AE382600398986 /* MainViewModel.swift */,
+				8A1B7EFC25AF6B3D00398986 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -138,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				8A1B7EF325AEFEEE00398986 /* Extension + Date.swift */,
-				8A1B7EF625AEFF0500398986 /* Extension + UIImage.swift */,
 				8A1B7EF925AF11C800398986 /* ForecastCell.swift */,
 			);
 			path = View;
@@ -267,14 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A1B7EFA25AF11C800398986 /* ForecastCell.swift in Sources */,
-				8A1B7EF725AEFF0500398986 /* Extension + UIImage.swift in Sources */,
 				8A1B7EEA25AE382600398986 /* MainViewModel.swift in Sources */,
+				8A1B7F0025AF6B6C00398986 /* DetailViewController.swift in Sources */,
 				8A1B7EED25AEF0FA00398986 /* NetworkLoader.swift in Sources */,
 				8A1B7EB425AE254B00398986 /* AppDelegate.swift in Sources */,
 				8A1B7EE325AE2C9A00398986 /* ForecastModel.swift in Sources */,
 				8A1B7EB625AE254B00398986 /* SceneDelegate.swift in Sources */,
 				8A1B7EE725AE37D300398986 /* MainViewController.swift in Sources */,
 				8A1B7EF025AEF62700398986 /* CacheManager.swift in Sources */,
+				8A1B7EFD25AF6B3E00398986 /* DetailViewModel.swift in Sources */,
 				8A1B7EF425AEFEEE00398986 /* Extension + Date.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,14 +5,17 @@ import RxSwift
 
 class NetworkLoader {
     
+    // MARK: - Singleton
     static let shared = NetworkLoader()
     
-    class var isConnectedToInternet:Bool {
+    // MARK: - Variable that store Internet accessablity state
+    static var isConnectedToInternet:Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
     }
     
-    private var baseURL = "https://api.openweathermap.org/data/2.5/onecall?"
-    private var requestParams: Parameters = [
+    // MARK: - Request URL data
+    private let baseURL = "https://api.openweathermap.org/data/2.5/onecall?"
+    private let requestParams: Parameters = [
         "lat": "55.751244",
         "lon": "37.618423",
         "exclude": "minutely,hourly",
@@ -21,22 +24,27 @@ class NetworkLoader {
         "units": "metric"
     ]
     
-    
-    func fetchForecastData(complition: @escaping () -> Void) -> Observable<[ForecastPlainModel]> {
-
+    // MARK: - API request
+    func fetchForecastData(completion: @escaping () -> Void) -> Observable<[ForecastPlainModel]> {
+        // Create an Observable
         return Observable.create { [unowned self] observer in
-
+            // API request
             let request = AF.request(self.baseURL, parameters: self.requestParams).response { response in
                 guard let data = response.data else { return }
                 do {
+                    // Parse data to our model
                     let forecast = try JSONDecoder().decode(WeeklyForecastData.self, from: data)
+                    // Convert data for plain model and set next value for observable
                     let plainForecast = forecast.toPlainModel()
                     observer.onNext(plainForecast)
+                    // Save data to cache
                     CacheManager.shared.save(plainForecasts: plainForecast)
                 } catch {
+                    // Handle wrong behavior
                     observer.onNext([])
                 }
-                complition()
+                // Callback for controll activity loader
+                completion()
             }
             return Disposables.create {
                 request.cancel()
