@@ -3,17 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		823C337D2774DCAC23A76C1C /* Pods_TZ_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5D13DFD832AC7F746875A8 /* Pods_TZ_App.framework */; };
 		8A1B7EB425AE254B00398986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EB325AE254B00398986 /* AppDelegate.swift */; };
 		8A1B7EB625AE254B00398986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EB525AE254B00398986 /* SceneDelegate.swift */; };
-		8A1B7EB825AE254B00398986 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EB725AE254B00398986 /* ViewController.swift */; };
 		8A1B7EBB25AE254B00398986 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1B7EB925AE254B00398986 /* Main.storyboard */; };
 		8A1B7EBD25AE254D00398986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1B7EBC25AE254D00398986 /* Assets.xcassets */; };
 		8A1B7EC025AE254D00398986 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1B7EBE25AE254D00398986 /* LaunchScreen.storyboard */; };
+		8A1B7EE325AE2C9A00398986 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EE225AE2C9A00398986 /* ForecastModel.swift */; };
+		8A1B7EE725AE37D300398986 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EE625AE37D300398986 /* MainViewController.swift */; };
+		8A1B7EEA25AE382600398986 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EE925AE382600398986 /* MainViewModel.swift */; };
+		8A1B7EED25AEF0FA00398986 /* NetworkLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EEC25AEF0FA00398986 /* NetworkLoader.swift */; };
+		8A1B7EF025AEF62700398986 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EEF25AEF62700398986 /* CacheManager.swift */; };
+		8A1B7EF425AEFEEE00398986 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EF325AEFEEE00398986 /* Extension + Date.swift */; };
+		8A1B7EF725AEFF0500398986 /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EF625AEFF0500398986 /* Extension + UIImage.swift */; };
+		8A1B7EFA25AF11C800398986 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B7EF925AF11C800398986 /* ForecastCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,11 +29,18 @@
 		8A1B7EB025AE254B00398986 /* TZ_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TZ_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1B7EB325AE254B00398986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A1B7EB525AE254B00398986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8A1B7EB725AE254B00398986 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A1B7EBA25AE254B00398986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A1B7EBC25AE254D00398986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A1B7EBF25AE254D00398986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A1B7EC125AE254D00398986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A1B7EE225AE2C9A00398986 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		8A1B7EE625AE37D300398986 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8A1B7EE925AE382600398986 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8A1B7EEC25AEF0FA00398986 /* NetworkLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoader.swift; sourceTree = "<group>"; };
+		8A1B7EEF25AEF62700398986 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		8A1B7EF325AEFEEE00398986 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
+		8A1B7EF625AEFF0500398986 /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
+		8A1B7EF925AF11C800398986 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		9C10B8952F2FEB28C9722945 /* Pods-TZ_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TZ_App.debug.xcconfig"; path = "Target Support Files/Pods-TZ_App/Pods-TZ_App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +62,6 @@
 				9C10B8952F2FEB28C9722945 /* Pods-TZ_App.debug.xcconfig */,
 				4E6452A893B2576E4431CE74 /* Pods-TZ_App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +86,62 @@
 		8A1B7EB225AE254B00398986 /* TZ_App */ = {
 			isa = PBXGroup;
 			children = (
+				8A1B7EF225AEFED900398986 /* View */,
+				8A1B7EE125AE2C3900398986 /* Services */,
+				8A1B7EE025AE2C3100398986 /* ViewModel */,
+				8A1B7EDF25AE2C2700398986 /* Model */,
+				8A1B7EDE25AE2C1900398986 /* Controller */,
 				8A1B7EB325AE254B00398986 /* AppDelegate.swift */,
 				8A1B7EB525AE254B00398986 /* SceneDelegate.swift */,
-				8A1B7EB725AE254B00398986 /* ViewController.swift */,
 				8A1B7EB925AE254B00398986 /* Main.storyboard */,
 				8A1B7EBC25AE254D00398986 /* Assets.xcassets */,
 				8A1B7EBE25AE254D00398986 /* LaunchScreen.storyboard */,
 				8A1B7EC125AE254D00398986 /* Info.plist */,
 			);
 			path = TZ_App;
+			sourceTree = "<group>";
+		};
+		8A1B7EDE25AE2C1900398986 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B7EE625AE37D300398986 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A1B7EDF25AE2C2700398986 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B7EE225AE2C9A00398986 /* ForecastModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A1B7EE025AE2C3100398986 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B7EE925AE382600398986 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8A1B7EE125AE2C3900398986 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B7EEC25AEF0FA00398986 /* NetworkLoader.swift */,
+				8A1B7EEF25AEF62700398986 /* CacheManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8A1B7EF225AEFED900398986 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B7EF325AEFEEE00398986 /* Extension + Date.swift */,
+				8A1B7EF625AEFF0500398986 /* Extension + UIImage.swift */,
+				8A1B7EF925AF11C800398986 /* ForecastCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		904AA6542DF8ABB04F9015B8 /* Frameworks */ = {
@@ -206,9 +266,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A1B7EB825AE254B00398986 /* ViewController.swift in Sources */,
+				8A1B7EFA25AF11C800398986 /* ForecastCell.swift in Sources */,
+				8A1B7EF725AEFF0500398986 /* Extension + UIImage.swift in Sources */,
+				8A1B7EEA25AE382600398986 /* MainViewModel.swift in Sources */,
+				8A1B7EED25AEF0FA00398986 /* NetworkLoader.swift in Sources */,
 				8A1B7EB425AE254B00398986 /* AppDelegate.swift in Sources */,
+				8A1B7EE325AE2C9A00398986 /* ForecastModel.swift in Sources */,
 				8A1B7EB625AE254B00398986 /* SceneDelegate.swift in Sources */,
+				8A1B7EE725AE37D300398986 /* MainViewController.swift in Sources */,
+				8A1B7EF025AEF62700398986 /* CacheManager.swift in Sources */,
+				8A1B7EF425AEFEEE00398986 /* Extension + Date.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
